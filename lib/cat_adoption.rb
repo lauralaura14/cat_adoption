@@ -1,5 +1,8 @@
-require "cat_adoption/version"
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
-module CatAdoption
-  # Your code goes here...
-end
+require_relative "cat_adoption/version"
+require_relative './cat_adoption/cat'
+require_relative './cat_adoption/cli'
+require_relative './cat_adoption/scraper'

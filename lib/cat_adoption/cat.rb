@@ -3,7 +3,7 @@ class CatAdoption::Cat
 
   @@all = []
 
-  def initialize(name, url, bio)
+  def initialize(name = nil, url = nil, bio = nil)
     @name = name
     @url = url
     @bio = bio
