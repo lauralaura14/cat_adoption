@@ -1,6 +1,7 @@
 class CatAdoption::CLI
 
   def call
+    CatAdoption::Scraper.scrape_main_page
     show_list
     selection
     leave

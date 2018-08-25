@@ -20,9 +20,9 @@ class CatAdoption::Scraper
   end
 
   def self.scrape_bio_page(cat)
-    page = cat.url
-    doc = Nokogiri::HTML(open(page))
-    cat.bio = doc.css("td.description-text")[0].text.strip
+    site = cat.url
+    bio_page = Nokogiri::HTML(open(site))
+    cat.bio = bio_page.css("td.description-text")[0].text.strip
     end
   end
  
