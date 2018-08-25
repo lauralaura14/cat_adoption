@@ -18,15 +18,23 @@ class CatAdoption::CLI
   end
 
   def selection
-    loop do 
-       
+    loop do
+
     puts "Select the number of the cat you would like to learn about or type cats to see the list again or type exit to leave:"
     input = gets.strip.downcase
 
-    if input.to_i > 0 && input.to_i <= @cats.count 
+    if input.to_i > 0 && input.to_i <= @cats.count
       cat = @cats[input.to_i - 1]
       CatAdoption::Scraper.scrape_bio_page(cat)
-      puts "#{cat.bio}"
+      puts "#{cat.number}"
+      puts "#{cat.breed}"
+      puts "#{cat.sex}"
+      puts "#{cat.dob}"
+      puts "#{cat.age}"
+      puts "#{cat.weight}"
+      puts "#{cat.color}"
+      puts "#{cat.location}"
+      puts "#{cat.fee}"
     elsif input == "exit"
       return
     elsif input == "cats"
