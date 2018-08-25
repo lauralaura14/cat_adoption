@@ -18,22 +18,24 @@ class CatAdoption::CLI
   end
 
   def selection
-    input = nil
-    while input != "exit"
-      puts "Select the number of the cat you would like to learn about or type cats to see the list again or type exit to leave:"
-      input = gets.strip.downcase
+    loop do 
+       
+    puts "Select the number of the cat you would like to learn about or type cats to see the list again or type exit to leave:"
+    input = gets.strip.downcase
 
-      if input.to_i > 0 && input.to_i <= @cats.count 
-        cat = @cats[input.to_i - 1]
-        CatAdoption::Scraper.scrape_bio_page(cat)
-        puts "#{cat.bio}"
-      elsif input == "cats"
-        show_list
-      else
-        puts "Invalid choice. Type cats or exit."
-      end
+    if input.to_i > 0 && input.to_i <= @cats.count 
+      cat = @cats[input.to_i - 1]
+      CatAdoption::Scraper.scrape_bio_page(cat)
+      puts "#{cat.bio}"
+    elsif input == "exit"
+      return
+    elsif input == "cats"
+      show_list
+    else
+      puts "Invalid choice. Type cats or exit."
     end
   end
+end
 
   def leave
     puts "Thanks for reading!"
