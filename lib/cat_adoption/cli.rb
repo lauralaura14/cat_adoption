@@ -1,6 +1,7 @@
 class CatAdoption::CLI
 
   def call
+    puts "Welcome"
     CatAdoption::Scraper.scrape_main_page
     show_list
     selection
@@ -22,8 +23,9 @@ class CatAdoption::CLI
       puts "Select the number of the cat you would like to learn about or type cats to see the list again or type exit to leave:"
       input = gets.strip.downcase
 
-      if input.to_i > 0
-        cat = @cats[input.to_i-1]
+      if input.to_i > 0 && input.to_i <= @cats.count 
+        cat = @cats[input.to_i - 1]
+        CatAdoption::Scraper.scrape_bio_page(cat)
         puts "#{cat.bio}"
       elsif input == "cats"
         show_list
