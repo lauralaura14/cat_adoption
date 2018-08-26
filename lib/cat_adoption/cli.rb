@@ -26,15 +26,16 @@ class CatAdoption::CLI
     if input.to_i > 0 && input.to_i <= @cats.count
       cat = @cats[input.to_i - 1]
       CatAdoption::Scraper.scrape_bio_page(cat)
-      puts "#{cat.number}"
-      puts "#{cat.breed}"
-      puts "#{cat.sex}"
-      puts "#{cat.dob}"
-      puts "#{cat.age}"
-      puts "#{cat.weight}"
-      puts "#{cat.color}"
-      puts "#{cat.location}"
-      puts "#{cat.fee}"
+      puts "#{cat.number_label} #{cat.number}"
+      puts "#{cat.breed_label} #{cat.breed}"
+      puts "#{cat.sex_label} #{cat.sex}"
+      puts "#{cat.dob_label} #{cat.dob}"
+      puts "#{cat.age_label} #{cat.age}"
+      puts "#{cat.weight_label} #{cat.weight}"
+      puts "#{cat.color_label} #{cat.color}"
+      puts "#{cat.location_label} #{cat.location}"
+      puts "#{cat.fee_label} #{cat.fee}"
+      puts "Description: #{cat.description}"
     elsif input == "exit"
       return
     elsif input == "cats"

@@ -22,6 +22,15 @@ class CatAdoption::Scraper
   def self.scrape_bio_page(cat)
     site = cat.url
     bio_page = Nokogiri::HTML(open(site))
+    cat.number_label = bio_page.css("td.detail_text")[0].text.strip
+    cat.breed_label = bio_page.css("td.detail_text")[1].text.strip
+    cat.sex_label = bio_page.css("td.detail_text")[2].text.strip
+    cat.dob_label = bio_page.css("td.detail_text")[3].text.strip
+    cat.age_label = bio_page.css("td.detail_text")[4].text.strip
+    cat.weight_label = bio_page.css("td.detail_text")[5].text.strip
+    cat.color_label = bio_page.css("td.detail_text")[6].text.strip
+    cat.location_label = bio_page.css("td.detail_text")[7].text.strip
+    cat.fee_label = bio_page.css("td.detail_text")[8].text.strip
     cat.number = bio_page.css("td.description-text")[0].text.strip
     cat.breed = bio_page.css("td.description-text")[1].text.strip
     cat.sex = bio_page.css("td.description-text")[2].text.strip
@@ -31,6 +40,6 @@ class CatAdoption::Scraper
     cat.color = bio_page.css("td.description-text")[6].text.strip
     cat.location = bio_page.css("td.description-text")[7].text.strip
     cat.fee = bio_page.css("td.description-text")[8].text.strip
+    cat.description = bio_page.css(".lbDescription").text.strip
     end
   end
- 
