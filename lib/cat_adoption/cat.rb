@@ -3,7 +3,7 @@ class CatAdoption::Cat
 
   @@all = []
 
-  def initialize(name = nil, url = nil, number = nil, breed = nil, sex = nil, dob = nil, age = nil, weight = nil, color = nil, location = nil, fee = nil, number_label = nil, breed_label = nil, sex_label = nil, dob_label = nil, age_label = nil, weight_label = nil, color_label = nil, location_label = nil, fee_label = nil, description = nil)
+  def initialize(name = nil, url = nil, number_label = nil, breed_label = nil, sex_label = nil, dob_label = nil, age_label = nil, weight_label = nil, color_label = nil, location_label = nil, fee_label = nil, number = nil, breed = nil, sex = nil, dob = nil, age = nil, weight = nil, color = nil, location = nil, fee = nil, description = nil)
     @number_label = number_label
     @breed_label = breed_label
     @sex_label = sex_label

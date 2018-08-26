@@ -8,6 +8,11 @@ class CatAdoption::Scraper
 # bio page
   # bio = doc.css("td.description-text")[0].text.strip
 
+#-- test individual page --
+# def self.scrape_main
+#  page = Nokogiri::HTML(open("http://www.austinhumanesociety.org/pet-details/?id=10467086"))
+#  binding.pry
+# end
 
   def self.scrape_main_page
   page = Nokogiri::HTML(open("http://www.austinhumanesociety.org/feline-friends/"))
@@ -40,6 +45,6 @@ class CatAdoption::Scraper
     cat.color = bio_page.css("td.description-text")[6].text.strip
     cat.location = bio_page.css("td.description-text")[7].text.strip
     cat.fee = bio_page.css("td.description-text")[8].text.strip
-    cat.description = bio_page.css(".lbDescription").text.strip
-    end
+    cat.description = bio_page.css("span#lbDescription").text.strip
   end
+end
