@@ -22,8 +22,8 @@ Or install it yourself as:
 
 1. Clone repository
 2. cd into repository
-3. Run 'bundle install'
-4. Run 'bin/cat_adoption' in terminal
+3. Run `bundle install`
+4. Run `bin/cat_adoption` in terminal
 
 ## Development
 
