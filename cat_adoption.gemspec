@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["'laurao148@gmail.com'"]
 
   spec.summary       = "Ruby gem for cat adoption."
-  spec.description   = "See above."
+  spec.description   = "Ruby gem for cat adoption."
   spec.homepage      = "https://github.com/lauralaura14"
   spec.license       = "MIT"
 
